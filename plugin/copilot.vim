@@ -2,7 +2,7 @@ if exists('g:loaded_copilot')
   finish
 endif
 let g:loaded_copilot = 1
-let g:copilot_echo_num_completions = 1
+let g:copilot_echo_num_completions = 0
 
 scriptencoding utf-8
 
@@ -78,5 +78,4 @@ if getftime(s:dir . '/doc/copilot.txt') > getftime(s:dir . '/doc/tags')
   silent! execute 'helptags' fnameescape(s:dir . '/doc')
 endif
 
-imap <silent><nowait><expr> <A-]> copilot#NextResult(1)
-imap <silent><nowait><expr> <A-[> copilot#NextResult(-1)
+imap <silent><nowait><expr> <C-z> copilot#NextResult(1)
